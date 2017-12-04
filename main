@@ -11,6 +11,7 @@ int main (int argc, const char * argv[]) {
     char nombreAbuscar[120]; //para buscar nombres
     char edadAbuscar[3];
     char generoAbuscar[2];
+    char carreraAbuscar[20];
     int temporal=0; //uso del case 10.1
     float SumaCalif=0;
     int alumno=0; //recorrer dentro del 10 los alumno
@@ -141,23 +142,17 @@ printf("El promedio del grupo es: %f",SumaCalif/(indiceAlArreglo));
                   }
                 break;
             case 12:
-                     printf("Dame el nombre a buscar: ");
-                     scanf("%*c%[^\n]",&nombreAbuscar);
+                     printf("Dame la carrera a buscar: ");
+                     scanf("%*c%[^\n]",&carreraAbuscar);
                     for (j=0;j<=indiceAlArreglo;j++)
               {
-                    if (strcmp(nombreAbuscar,listaAlumnos[j].nombre)==0)
+                    if (strcmp(carreraAbuscar,listaAlumnos[j].carrera)==0)
                      imprimeAlumno(listaAlumnos[j]);
                 }
                 break;
             default:
-            printf("Dame el nombre a buscar: ");
-            scanf("%*c%[^\n]",&nombreAbuscar);
-            for (j=0;j<=indiceAlArreglo;j++)
-            {
-              if (strcmp(nombreAbuscar,listaAlumnos[j].nombre)==0)
-                imprimeAlumno(listaAlumnos[j]);
-                }
-                break;
+            printf("Opcion no valida\n");
+            break;
         }
 
     } while (opcion != 0);
