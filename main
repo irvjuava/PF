@@ -9,7 +9,7 @@ int main (int argc, const char * argv[]) {
     int j=0; // uso general de los for
     int tmp=0; //uso switch case 10
     char nombreAbuscar[120]; //para buscar nombres
-    char edadAbuscar[3];
+    int edadAbuscar;
     char generoAbuscar[2];
     char carreraAbuscar[20];
     int temporal=0; //uso del case 10.1
@@ -74,11 +74,11 @@ printf("El promedio del grupo es: %f",SumaCalif/(indiceAlArreglo));
 				        break;
             case 8:
             printf("Dame la edad a buscar: ");
-            scanf("%*c%[^\n]",&edadAbuscar);
+            scanf("%d",&edadAbuscar);
             for (j=0;j<=indiceAlArreglo;j++){
-              if (strcmp(edadAbuscar,listaAlumnos[j].edad)==0)
+              if ((listaAlumnos[j].edad)==edadAbuscar){
                 imprimeAlumno(listaAlumnos[j]);
-              }
+              }}
                 break;
             case 9:
             printf("Ingrese elemento a eliminar: ");
@@ -126,8 +126,8 @@ printf("El promedio del grupo es: %f",SumaCalif/(indiceAlArreglo));
                         break;
                 case 6:
                        printf("Vas editar el promedio\n Que promedio vas a poner? ");
-                       scanf("%f", &temporal);
-                       listaAlumnos[alumno].promedio=temporal;
+                       scanf("%f", &SumaCalif);
+                       listaAlumnos[alumno].promedio=SumaCalif;
                        imprimeAlumno(listaAlumnos[alumno]);
 
             }
@@ -158,3 +158,4 @@ printf("El promedio del grupo es: %f",SumaCalif/(indiceAlArreglo));
     } while (opcion != 0);
     return 0;
 }
+
